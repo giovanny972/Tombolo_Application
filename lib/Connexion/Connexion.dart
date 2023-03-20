@@ -1,8 +1,7 @@
 // ignore_for_file: unused_field, library_private_types_in_public_api
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:tombolo/tombolaCode/TombalaCode.dart';
+import 'package:tombolo/Inscription/Inscription.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -21,13 +20,15 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        title: const Text('Connexion'),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.arrow_back),
-            onPressed: () => Navigator.of(context).pop(),
-          )
-        ],
+        title: const Center(
+          child: Text('Connexion'),
+        ),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => {
+            Navigator.of(context).pop(),
+          },
+        ),
       ),
       body: Center(
         child: SingleChildScrollView(
@@ -65,6 +66,27 @@ class _LoginPageState extends State<LoginPage> {
                     validator: (value) =>
                         value!.isEmpty ? "Password can't be empty" : null,
                     onSaved: (value) => _password = value!,
+                  ),
+                ),
+                const SizedBox(height: 20.0),
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SignUpPage()),
+                    );
+                    // Actions à effectuer lors de l'appui sur le bouton lien
+                  },
+                  style: TextButton.styleFrom(
+                    primary: Colors.black, // Couleur du texte du bouton lien
+                    textStyle: const TextStyle(
+                      fontSize: 16, // Taille du texte du bouton lien
+                      decoration: TextDecoration
+                          .underline, // Souligné le texte du bouton lien
+                    ),
+                  ),
+                  child: const Center(
+                    child: Text('Inscription'),
                   ),
                 ),
                 const SizedBox(height: 20.0),

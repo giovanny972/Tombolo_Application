@@ -6,7 +6,9 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Tombola App'),
+        title: const Center(
+          child: Text('Tombola App'),
+        ),
       ),
       body: Container(
         decoration: const BoxDecoration(

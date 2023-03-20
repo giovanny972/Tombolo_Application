@@ -24,14 +24,11 @@ class TombolaPage extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Center(child: Text("Home")),
-          actions: [
-            IconButton(
+            title: const Center(child: Text("Home")),
+            leading: IconButton(
               icon: const Icon(Icons.arrow_back),
               onPressed: () => Navigator.of(context).pop(),
-            )
-          ],
-        ),
+            )),
         body: GridView.count(
           crossAxisCount: 4, // Nombre de billets par ligne
           children: List.generate(totalBillets, (index) {
