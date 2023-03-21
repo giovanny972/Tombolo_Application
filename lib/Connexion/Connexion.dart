@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:tombolo/tombolaCode/TombalaCode.dart';
 import 'package:tombolo/Inscription/Inscription.dart';
+import 'package:tombolo/HomePage/HomePage.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -94,7 +95,7 @@ class _LoginPageState extends State<LoginPage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => TombolaPage()),
+                      MaterialPageRoute(builder: (context) => HomePage()),
                     );
                     if (_formKey.currentState!.validate()) {
                       // _formKey.currentState.save();
