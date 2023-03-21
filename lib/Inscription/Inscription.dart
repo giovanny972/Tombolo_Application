@@ -27,7 +27,7 @@ class _SignUpPageState extends State<SignUpPage> {
               children: <Widget>[
                 TextFormField(
                   decoration: const InputDecoration(
-                    labelText: 'Username',
+                    labelText: "Nom d'Utilisateur",
                   ),
                   validator: (value) {
                     if (value!.isEmpty) {
@@ -57,7 +57,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
                 TextFormField(
                   decoration: const InputDecoration(
-                    labelText: 'Password',
+                    labelText: 'Mot de Passe',
                   ),
                   obscureText: true,
                   validator: (value) {

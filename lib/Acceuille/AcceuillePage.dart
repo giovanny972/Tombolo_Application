@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tombolo/tombolaCode/TombalaCode.dart';
 import 'package:tombolo/Connexion/Connexion.dart';
 
-class HomePage extends StatelessWidget {
+class AcceuillePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(

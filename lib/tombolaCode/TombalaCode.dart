@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:tombolo/Code Dépendance/Carousel.dart';
 
 class TombolaPage extends StatelessWidget {
   TombolaPage({Key? key});
@@ -29,44 +30,52 @@ class TombolaPage extends StatelessWidget {
               icon: const Icon(Icons.arrow_back),
               onPressed: () => Navigator.of(context).pop(),
             )),
-        body: GridView.count(
-          crossAxisCount: 4, // Nombre de billets par ligne
-          children: List.generate(totalBillets, (index) {
-            return Center(
-              child: TextButton(
-                onPressed: () {
-                  // Acheter un billet
-                  var billetAchete = acheterBillet(prixBillet);
+        body: Column(
+          children: [
+            Carousel(),
+            GridView.count(
+              crossAxisCount: 4, // Nombre de billets par ligne
+              children: List.generate(
+                totalBillets,
+                (index) {
+                  return Center(
+                    child: TextButton(
+                      onPressed: () {
+                        // Acheter un billet
+                        var billetAchete = acheterBillet(prixBillet);
 
-                  // Tirage au sort du gagnant
-                  var gagnant = random.nextInt(totalBillets);
+                        // Tirage au sort du gagnant
+                        var gagnant = random.nextInt(totalBillets);
 
-                  if (gagnant == billetAchete) {
-                    // Le billet acheté a gagné
-                    var articleGagne =
-                        articles[random.nextInt(articles.length)];
-                    // Affichage de la notification de gain
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text(
-                            "Félicitations! Vous avez gagné ${articleGagne['nom']} d'une valeur de ${articleGagne['valeur']}€"),
-                      ),
-                    );
-                  } else {
-                    // Le billet acheté n'a pas gagné
-                    // Affichage de la notification de non gain
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text(
-                            "Désolé, vous n'avez pas gagné cette fois-ci. Essayez de nouveau!"),
-                      ),
-                    );
-                  }
+                        if (gagnant == billetAchete) {
+                          // Le billet acheté a gagné
+                          var articleGagne =
+                              articles[random.nextInt(articles.length)];
+                          // Affichage de la notification de gain
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(
+                                  "Félicitations! Vous avez gagné ${articleGagne['nom']} d'une valeur de ${articleGagne['valeur']}€"),
+                            ),
+                          );
+                        } else {
+                          // Le billet acheté n'a pas gagné
+                          // Affichage de la notification de non gain
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text(
+                                  "Désolé, vous n'avez pas gagné cette fois-ci. Essayez de nouveau!"),
+                            ),
+                          );
+                        }
+                      },
+                      child: const Text('Acheter un billet'),
+                    ),
+                  );
                 },
-                child: const Text('Acheter un billet'),
               ),
-            );
-          }),
+            ),
+          ],
         ),
       ),
     );
