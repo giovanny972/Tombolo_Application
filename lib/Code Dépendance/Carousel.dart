@@ -19,13 +19,16 @@ class Carousel extends StatelessWidget {
           return Builder(
             builder: (BuildContext context) {
               return Container(
-                  width: MediaQuery.of(context).size.width,
-                  margin: const EdgeInsets.symmetric(horizontal: 5.0),
-                  decoration: const BoxDecoration(color: Colors.amber),
+                width: MediaQuery.of(context).size.width,
+                margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                decoration: const BoxDecoration(color: Colors.amber),
+                child: Center(
                   child: Text(
                     'Ticket $i',
                     style: const TextStyle(fontSize: 16.0),
-                  ));
+                  ),
+                ),
+              );
             },
           );
         }).toList(),

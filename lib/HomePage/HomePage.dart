@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tombolo/Code Dépendance/Carousel.dart';
-import 'package:tombolo/Code Dépendance/barre_de_recherche.dart';
+import 'package:tombolo/Component/barre_de_recherche.dart';
+import 'package:tombolo/Component/Annonces.dart';
+import 'package:tombolo/Component/Bottom_navigation_bar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -8,6 +10,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: MyBottomNavigationBar(),
       appBar: AppBar(
         title: const Center(child: Text("Home")),
         leading: IconButton(
@@ -19,7 +22,37 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             Carousel(),
-            NavBar(),
+            const SizedBox(height: 20.0),
+            SearchBar(),
+            const SizedBox(height: 20.0),
+            const Annonces(),
+            const SizedBox(height: 20.0),
+            Center(
+              child: Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment
+                      .center, // Centrer les éléments horizontalement
+                  children: [
+                    const SizedBox(width: 50),
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: const Text('Annonce'),
+                    ),
+                    const SizedBox(width: 50),
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: const Text('Tombola'),
+                    ),
+                    const SizedBox(width: 50),
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: const Text('Favorie'),
+                    ),
+                    const SizedBox(width: 50),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
