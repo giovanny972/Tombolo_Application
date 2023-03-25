@@ -1,8 +1,8 @@
 // ignore_for_file: unused_field, library_private_types_in_public_api
 import 'package:flutter/material.dart';
-import 'package:tombolo/tombolaCode/TombalaCode.dart';
-import 'package:tombolo/Inscription/Inscription.dart';
-import 'package:tombolo/HomePage/HomePage.dart';
+import 'package:tombolo/Screen/tombolaCode/TombalaCode.dart';
+import 'package:tombolo/Screen/Inscription/Inscription.dart';
+import 'package:tombolo/Screen/HomePage/HomePage.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);

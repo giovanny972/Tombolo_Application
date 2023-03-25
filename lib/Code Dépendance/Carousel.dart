@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:tombolo/tombolaCode/TombalaCode.dart';
+import 'package:tombolo/Screen/tombolaCode/TombalaCode.dart';
 
 class Carousel extends StatelessWidget {
   Carousel({super.key});

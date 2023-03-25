@@ -3,6 +3,7 @@ import 'package:tombolo/Code Dépendance/Carousel.dart';
 import 'package:tombolo/Component/barre_de_recherche.dart';
 import 'package:tombolo/Component/Annonces.dart';
 import 'package:tombolo/Component/Bottom_navigation_bar.dart';
+import 'package:tombolo/Screen/tombolaCode/TombolaCarde.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -13,10 +14,6 @@ class HomePage extends StatelessWidget {
       bottomNavigationBar: MyBottomNavigationBar(),
       appBar: AppBar(
         title: const Center(child: Text("Home")),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
       ),
       body: Container(
         child: Column(
@@ -33,22 +30,29 @@ class HomePage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment
                       .center, // Centrer les éléments horizontalement
                   children: [
-                    const SizedBox(width: 50),
+                    const SizedBox(width: 20),
                     ElevatedButton(
                       onPressed: () {},
                       child: const Text('Annonce'),
                     ),
-                    const SizedBox(width: 50),
+                    const SizedBox(width: 20),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const TombolaCarde(),
+                          ),
+                        );
+                      },
                       child: const Text('Tombola'),
                     ),
-                    const SizedBox(width: 50),
+                    const SizedBox(width: 20),
                     ElevatedButton(
                       onPressed: () {},
                       child: const Text('Favorie'),
                     ),
-                    const SizedBox(width: 50),
+                    const SizedBox(width: 20),
                   ],
                 ),
               ),

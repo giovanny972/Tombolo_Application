@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tombolo/tombolaCode/TombalaCode.dart';
-import 'package:tombolo/Connexion/Connexion.dart';
+import 'package:tombolo/Screen/tombolaCode/TombalaCode.dart';
+import 'package:tombolo/Screen/Connexion/Connexion.dart';
 
 class AcceuillePage extends StatelessWidget {
   Widget build(BuildContext context) {
